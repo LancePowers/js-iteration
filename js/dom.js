@@ -1,8 +1,27 @@
+/////////////////Names//////////////////
+var nameArray = document.getElementsByName('names')[0].innerHTML.split('\n');
 
+var allNamesClick = document.getElementById('all-names');
+var firstNamesClick = document.getElementById('first-names');
+var lastNamesClick = document.getElementById('last-names');
+var namesWithLengthClick = document.getElementById('names-with-lengths');
 
-// Hints for the first problem:
-//
-//   1. Find the button with the ID of `sum-all`
+allNamesClick.onclick = function(){allNames();};
+firstNamesClick.onclick = function(){firstLastNames(0);};
+lastNamesClick.onclick = function(){firstLastNames(1);};
+namesWithLengthClick.onclick = function(){namesWithLength();};
+
+function printName(valueArr, lengthArr){
+  var list = document.getElementById('out');
+  list.innerHTML = null;
+  for (var i = 0; i < valueArr.length; i++) {
+    var listItem = document.createElement('li');
+    listItem.innerHTML = valueArr[i] + " " + lengthArr[i];
+    list.appendChild(listItem);
+  }
+}
+
+////////////////Prices//////////////
 var sumAllClick = document.getElementById('sum-all');
 sumAllClick.onclick = function(){sumAll();};
 var sumSelectedClick = document.getElementById('sum-selected');
@@ -14,8 +33,6 @@ averageAllClick.onclick = function(){averageAll();};
 var averageSelectedClick = document.getElementById('average-selected');
 averageSelectedClick.onclick = function(){averageSelected();};
 
-//   2. Add an event listener that:
-//     - finds the select element by name (use getElementsByName)
 function getAll(){
   var select = document.getElementsByName('prices')[0];
   var options = [];
@@ -44,7 +61,4 @@ answerBlock.appendChild(answer);
 
 }
 
-//     - passes all of its options to the `sum` function defined in `logic.js`
-//     - takes the value returned by the `sum` function and displays it on the page
-//
-// */
+
