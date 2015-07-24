@@ -1,12 +1,42 @@
-/*
+function sumAll(){
+  var all = getAll();
+  var sum = 0;
+  for (var i = 0; i < all.length; i++) {
+    sum += parseInt(all[i].value);
+  }
+  print(sum);
+}
 
-Hints for the first problem:
+function sumSelected(){
+  var selected = getSelected();
+  var summed = 0;
+  for (var i = 0; i < selected.length; i++) {
+    summed += parseInt(selected[i].value);
+  }
+  print(summed);
+}
 
-  1. Define a function that:
-    - is assigned to a variable named `sum`
-    - has one parameter named `options`
-    - returns the calculated sum of all of the values of all of the options passed in
+function countSelected(){
+  var selected = getSelected();
+  print(selected.length);
+}
 
-NOTE: use a `for` loop to make this happen.
+function averageSelected(){
+  var selected = getSelected();
+  var average = 0;
+  for (var i = 0; i < selected.length; i++) {
+    average += parseInt(selected[i].value);
+  }
+  average = average/selected.length;
+  print(average);
+}
 
-*/
+function averageAll(){
+  var selected = getAll();
+  var average = 0;
+  for (var i = 0; i < selected.length; i++) {
+    average += parseInt(selected[i].value);
+  }
+  average = average/selected.length;
+  print(average);
+}
